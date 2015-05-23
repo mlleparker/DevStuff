@@ -1,5 +1,7 @@
 # Base16 for Geany
 
+(Forked to https://github.com/robloach/base16-geany)
+
 [Geany](http://geany.org) is a text editor using the GTK2 toolkit with basic
 features of an integrated development environment. This is a
 [Base16](https://github.com/chriskempson/base16) color scheme for it, built using the [Base16 Builder](https://github.com/chriskempson/base16-builder).
