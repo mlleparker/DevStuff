@@ -2,5 +2,6 @@ Developper Stuffs.
 
 This repository contains stuffs for developpers.
 
-- base16-geany         : Colored syntax for Geany
-- geany-themes-master  : Colored syntax for Geany
+Colored syntax for Geany
+- [base16-geany](https://github.com/mlleparker/DevStuff/tree/master/base16-geany)
+- [geany-themes-master](https://github.com/mlleparker/DevStuff/tree/master/geany-themes-master)
