@@ -34,10 +34,11 @@
 ##
 ##  a. Put this file in /home/user/.config/geany/geanypy/
 ##  b. Set your own values :
-##     -> line 219
+##     -> line 55 -> author
+##     -> line 56 -> lexer
 ##
 ##  c. Start Geany and enable Lion Cub in 'tools' -> 'Python Plugin Manager'
-##  d. Command 'Pastebin' appears in 'tools'.
+##  d. Command '[LC] Pastebin' appears in 'tools'.
 ##
 ##
 ########################################
