@@ -7,7 +7,7 @@ import os, sys
 class Chewby(geany.Plugin):
 
     __plugin_name__ = "Lion Cub"
-    __plugin_version__ = "0.0.0.0 SubZero (Yellow Baby Coder)"
+    __plugin_version__ = "0.0.0.1 SubZero (Yellow Baby Coder)"
     __plugin_description__ = "Post your codes on pastebin.geany.org."
     __plugin_author__ = "Mademoiselle Parker"
     __plugin_author_github__ = "https://github.com/mlleparker"
@@ -44,9 +44,12 @@ class Chewby(geany.Plugin):
         fields = []
 
         if geany.dialogs.show_question('Confirm data exfiltration please.\n\nTarget :\tpastebin.geany.org'):
-            with open(geany.document.get_current().real_path, 'r') as finput:
 
-                fields.append(('content', finput.read()))
+            if geany.document.get_current().editor.scintilla.get_selection_contents() != '':
+                fields.append(('content', geany.document.get_current().editor.scintilla.get_selection_contents()))
+
+            else:
+                fields.append(('content', geany.document.get_current().editor.scintilla.get_contents()))
 
             #
             # Note :
