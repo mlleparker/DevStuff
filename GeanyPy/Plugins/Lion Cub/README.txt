@@ -30,7 +30,7 @@
 ## Pastebin site : pastebin.geany.org
 ##
 ## How to use :
-##  We assume GeanyPy is pprsent & installed.
+##  We assume GeanyPy is present & installed.
 ##
 ##  a. Put this file in /home/user/.config/geany/geanypy/
 ##  b. Set your own values :
