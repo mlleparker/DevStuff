@@ -2,7 +2,7 @@
 ## Geany Plugin : Lion Cub            ##
 ########################################
 ##
-## Version : 0.0.0 SubZerro
+## Version : 0.0.0.0 SubZerro
 ## Code name : Yellow Baby Coder
 ##
 ## Semantic:
