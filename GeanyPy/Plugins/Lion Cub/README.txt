@@ -47,4 +47,7 @@
 ## Dependency :
 ##   - GeanyPy  https://github.com/codebrainz/geanypy/
 ##
+## Note :
+##   - It's my first Geany plugin.
+##
 ########################################
