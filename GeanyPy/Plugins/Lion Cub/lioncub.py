@@ -24,6 +24,7 @@ class Chewby(geany.Plugin):
         self.menu_item.connect("activate", self.on_pastebin_item_clicked)
 
 
+
     #
     # Method cleanup()
     # To unload the plugin.
@@ -59,11 +60,10 @@ class Chewby(geany.Plugin):
             response = urllib2.urlopen(request)
             result = response.read()
 
-            geany.dialogs.show_msgbox(result)
-
 
         else:
             result = 'Aborded.'
+
 
         geany.dialogs.show_msgbox(result)
 
