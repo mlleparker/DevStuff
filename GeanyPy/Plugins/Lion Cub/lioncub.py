@@ -7,7 +7,7 @@ import os, sys
 class Chewby(geany.Plugin):
 
     __plugin_name__ = "Lion Cub"
-    __plugin_version__ = "0.0.0.3 SubZero (Yellow Baby Coder)"
+    __plugin_version__ = "0.0.0.4 SubZero (Yellow Baby Coder)"
     __plugin_description__ = "Post your codes on pastebin.geany.org."
     __plugin_github__ = "https://github.com/mlleparker/DevStuff/tree/master/GeanyPy/Plugins/Lion%20Cub"
     __plugin_author__ = "Mademoiselle Parker"
@@ -73,9 +73,7 @@ class Chewby(geany.Plugin):
             fields.append(('author', 'Lion Cub'))
             fields.append(('lexer', '%s' % geany.document.get_current().file_type.display_name.lower() if geany.document.get_current().file_type.display_name.lower() != 'aucun' else 'text'))
 
-            request = urllib2.Request('http://pastebin.geany.org/api/', urllib.urlencode(fields))
-            response = urllib2.urlopen(request)
-            result = response.read()
+            result = urllib2.urlopen(urllib2.Request('http://pastebin.geany.org/api/', urllib.urlencode(fields))).read()
 
 
         else:
