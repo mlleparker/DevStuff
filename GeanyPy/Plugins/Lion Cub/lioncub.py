@@ -7,8 +7,9 @@ import os, sys
 class Chewby(geany.Plugin):
 
     __plugin_name__ = "Lion Cub"
-    __plugin_version__ = "0.0.0.1 SubZero (Yellow Baby Coder)"
+    __plugin_version__ = "0.0.0.3 SubZero (Yellow Baby Coder)"
     __plugin_description__ = "Post your codes on pastebin.geany.org."
+    __plugin_github__ = "https://github.com/mlleparker/DevStuff/tree/master/GeanyPy/Plugins/Lion%20Cub"
     __plugin_author__ = "Mademoiselle Parker"
     __plugin_author_github__ = "https://github.com/mlleparker"
     __plugin_author_twitter__ = "@MllePark3r"
@@ -17,11 +18,24 @@ class Chewby(geany.Plugin):
 
     def __init__(self):
 
-        self.menu_item = gtk.MenuItem("[LC] Pastebin")
+        #
+        # Pastebin feature.
+        #
+        self.pastebin_item = gtk.MenuItem("[LC] Pastebin")
 
-        self.menu_item.show()
-        geany.main_widgets.tools_menu.append(self.menu_item)
-        self.menu_item.connect("activate", self.on_pastebin_item_clicked)
+        self.pastebin_item.show()
+        geany.main_widgets.tools_menu.append(self.pastebin_item)
+        self.pastebin_item.connect("activate", self.on_pastebin_item_clicked)
+
+
+        #
+        # Meow feature.
+        #
+        self.meow_item = gtk.MenuItem("[LC] Meow touch !")
+
+        self.meow_item.show()
+        geany.main_widgets.tools_menu.append(self.meow_item)
+        self.meow_item.connect("activate", self.on_meow_item_clicked)
 
 
 
@@ -30,7 +44,8 @@ class Chewby(geany.Plugin):
     # To unload the plugin.
     #
     def cleanup(self):
-        self.menu_item.destroy()
+        self.pastebin_item.destroy()
+        self.meow_item.destroy()
 
 
 
@@ -57,7 +72,7 @@ class Chewby(geany.Plugin):
             #  You can replace 'python' by python, text, php, perl, c, bash, ...
             #
             fields.append(('author', 'Lion Cub'))
-            fields.append(('lexer', 'python'))
+            fields.append(('lexer', '%s' % geany.document.get_current().file_type.display_name.lower() if geany.document.get_current().file_type.display_name.lower() != 'aucun' else 'text'))
 
             request = urllib2.Request('http://pastebin.geany.org/api/', urllib.urlencode(fields))
             response = urllib2.urlopen(request)
@@ -69,6 +84,16 @@ class Chewby(geany.Plugin):
 
 
         geany.dialogs.show_msgbox(result)
+
+
+
+    #
+    # Method on_meow_item_clicked()
+    # Just for testing.
+    #
+    def on_meow_item_clicked(widget, data):
+        geany.dialogs.show_msgbox('Meowwwwwwww !')
+
 
 
 

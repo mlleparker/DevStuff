@@ -2,7 +2,7 @@
 ## Geany Plugin : Lion Cub            ##
 ########################################
 ##
-## Version : 0.0.0.1 SubZerro
+## Version : 0.0.0.3 SubZerro
 ## Code name : Yellow Baby Coder
 ##
 ## Semantic:
@@ -29,6 +29,10 @@
 ##
 ## Pastebin site : pastebin.geany.org
 ##
+## Features :
+##  - Paste full source code or just selected.
+##  - Auto set source type.
+##
 ## How to use :
 ##  We assume GeanyPy is present & installed.
 ##
@@ -39,6 +43,7 @@
 ##
 ##  c. Start Geany and enable Lion Cub in 'tools' -> 'Python Plugin Manager'
 ##  d. Command '[LC] Pastebin' appears in 'tools'.
+##
 ##
 ##
 ########################################
