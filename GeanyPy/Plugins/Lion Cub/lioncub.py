@@ -1,6 +1,7 @@
 import gtk, geany
 import urllib, urllib2
 import os, sys
+import base64
 
 
 
@@ -10,7 +11,7 @@ class Chewby(geany.Plugin):
     __plugin_version__ = "0.0.0.4 SubZero (Yellow Baby Coder)"
     __plugin_description__ = "Post your codes on pastebin.geany.org."
     __plugin_github__ = "https://github.com/mlleparker/DevStuff/tree/master/GeanyPy/Plugins/Lion%20Cub"
-    __plugin_author__ = "Mademoiselle Parker"
+    __plugin_author__ = "Mademoiselle Parker <%s>" % base64.b64decode('Z3dlbm5hZWxsZS5nbG9pcmVAZ21haWwuY29t')
     __plugin_author_github__ = "https://github.com/mlleparker"
     __plugin_author_twitter__ = "@MllePark3r"
 
