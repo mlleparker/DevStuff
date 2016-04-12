@@ -69,7 +69,6 @@ class Chewby(geany.Plugin):
             #
             # Note :
             #  You can replace 'Lion Cub' by your nickname.
-            #  You can replace 'python' by python, text, php, perl, c, bash, ...
             #
             fields.append(('author', 'Lion Cub'))
             fields.append(('lexer', '%s' % geany.document.get_current().file_type.display_name.lower() if geany.document.get_current().file_type.display_name.lower() != 'aucun' else 'text'))
