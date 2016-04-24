@@ -11,4 +11,8 @@ Python plugins for Geany
 - [Lion Cub](https://github.com/mlleparker/DevStuff/tree/master/GeanyPy/Plugins/Lion%20Cub)
   Plugin to post source codes or snippets on [pastebin.geany.org](http://pastebin.geany.org).
 
+Some little scripts for my OS
+- [Skirt](https://github.com/mlleparker/DevStuff/tree/master/OS/Skirt)
+  To unshort URL.
+
 
