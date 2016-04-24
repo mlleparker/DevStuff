@@ -12,7 +12,14 @@ Python plugins for Geany
   Plugin to post source codes or snippets on [pastebin.geany.org](http://pastebin.geany.org).
 
 Some little scripts for my OS
-- [Skirt](https://github.com/mlleparker/DevStuff/tree/master/OS/Skirt)
+- [Skirt](https://github.com/mlleparker/DevStuff/tree/master/OS/)
   To unshort URL.
+
+  ie: ./skirt.py http://bit.ly/1KraYbN
+
+- [Pastebin](https://github.com/mlleparker/DevStuff/tree/master/OS/)
+  To past stdin to pastebin.geany.org.
+
+  ie: ls -lah | pastebin.py text
 
 
