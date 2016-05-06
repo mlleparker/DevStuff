@@ -11,7 +11,7 @@ Python plugins for Geany
 - [Lion Cub](https://github.com/mlleparker/DevStuff/tree/master/GeanyPy/Plugins/Lion%20Cub)
   Plugin to post source codes or snippets on [pastebin.geany.org](http://pastebin.geany.org).
 
-Some little scripts for my OS
+Some little scripts for my OS (Linux)
 - [Skirt](https://github.com/mlleparker/DevStuff/tree/master/OS/)
   To unshort URL.
 
@@ -23,3 +23,6 @@ Some little scripts for my OS
   ie: ls -lah | pastebin.py text
 
 
+Tools
+- [Midnight Commander](https://github.com/mlleparker/DevStuff/tree/master/OS/mc/)
+    - { skin } [Debianized Hocus Pocus Midnight Commander](https://github.com/mlleparker/DevStuff/tree/master/OS/mc/skins/)
