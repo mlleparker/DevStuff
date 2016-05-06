@@ -26,3 +26,6 @@ Some little scripts for my OS (Linux)
 Tools
 - [Midnight Commander](https://github.com/mlleparker/DevStuff/tree/master/OS/mc/)
     - { skin } [Debianized Hocus Pocus Midnight Commander](https://github.com/mlleparker/DevStuff/tree/master/OS/mc/skins/)
+
+- [Terminator](https://github.com/mlleparker/DevStuff/tree/master/OS/terminator/)
+    - { skin } [Debianized Hocus Pocus Terminator](https://github.com/mlleparker/DevStuff/tree/master/OS/terminator/)
