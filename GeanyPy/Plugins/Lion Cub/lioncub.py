@@ -8,7 +8,7 @@ import base64
 class Chewby(geany.Plugin):
 
     __plugin_name__ = "Lion Cub"
-    __plugin_version__ = "0.0.0.4 SubZero (Yellow Baby Coder)"
+    __plugin_version__ = "0.0.0.5 SubZero (Yellow Baby Coder)"
     __plugin_description__ = "Post your codes on pastebin.geany.org."
     __plugin_github__ = "https://github.com/mlleparker/DevStuff/tree/master/GeanyPy/Plugins/Lion%20Cub"
     __plugin_author__ = "Mademoiselle Parker <%s>" % base64.b64decode('Z3dlbm5hZWxsZS5nbG9pcmVAZ21haWwuY29t')
@@ -27,6 +27,17 @@ class Chewby(geany.Plugin):
         self.pastebin_item.show()
         geany.main_widgets.tools_menu.append(self.pastebin_item)
         self.pastebin_item.connect("activate", self.on_pastebin_item_clicked)
+
+
+
+        #
+        # Pastebin one time feature.
+        #
+        self.pastebinot_item = gtk.MenuItem("[LC] Pastebin one time")
+
+        self.pastebinot_item.show()
+        geany.main_widgets.tools_menu.append(self.pastebinot_item)
+        self.pastebinot_item.connect("activate", self.on_pastebinot_item_clicked)
 
 
         #
@@ -59,7 +70,7 @@ class Chewby(geany.Plugin):
 
         fields = []
 
-        if geany.dialogs.show_question('Confirm data exfiltration please.\n\nTarget :\tpastebin.geany.org'):
+        if geany.dialogs.show_question('Confirm data exfiltration please.\n\nTarget :\tdpaste.de'):
 
             if geany.document.get_current().editor.scintilla.get_selection_contents() != '':
                 fields.append(('content', geany.document.get_current().editor.scintilla.get_selection_contents()))
@@ -72,9 +83,46 @@ class Chewby(geany.Plugin):
             #  You can replace 'Lion Cub' by your nickname.
             #
             fields.append(('author', 'Lion Cub'))
-            fields.append(('lexer', '%s' % geany.document.get_current().file_type.display_name.lower() if geany.document.get_current().file_type.display_name.lower() != 'aucun' else 'text'))
+            fields.append(('expires', 3600))
+            fields.append(('lexer', '%s' % geany.document.get_current().file_type.display_name.lower() if geany.document.get_current().file_type.display_name.lower() != 'aucun' else 'python'))
 
-            result = urllib2.urlopen(urllib2.Request('http://pastebin.geany.org/api/', urllib.urlencode(fields))).read()
+            result = urllib2.urlopen(urllib2.Request('https://dpaste.de/api/', urllib.urlencode(fields))).read()
+
+
+        else:
+            result = 'Aborded.'
+
+
+        geany.dialogs.show_msgbox(str(result))
+
+
+
+    #
+    # Method on_pastebinot_item_clicked()
+    # Trigger to push source code to pastebin web site
+    #  and get back the URL of paste.
+    #
+    def on_pastebinot_item_clicked(widget, data):
+
+        fields = []
+
+        if geany.dialogs.show_question('Confirm data exfiltration please.\n\nTarget :\tdpaste.de'):
+
+            if geany.document.get_current().editor.scintilla.get_selection_contents() != '':
+                fields.append(('content', geany.document.get_current().editor.scintilla.get_selection_contents()))
+
+            else:
+                fields.append(('content', geany.document.get_current().editor.scintilla.get_contents()))
+
+            #
+            # Note :
+            #  You can replace 'Lion Cub' by your nickname.
+            #
+            #fields.append(('author', 'Lion Cub'))
+            fields.append(('expires', 'onetime'))
+            fields.append(('lexer', '%s' % geany.document.get_current().file_type.display_name.lower() if geany.document.get_current().file_type.display_name.lower() != 'aucun' else 'python'))
+
+            result = urllib2.urlopen(urllib2.Request('https://dpaste.de/api/', urllib.urlencode(fields))).read()[1:-1]
 
 
         else:
@@ -82,7 +130,6 @@ class Chewby(geany.Plugin):
 
 
         geany.dialogs.show_msgbox(result)
-
 
 
     #
